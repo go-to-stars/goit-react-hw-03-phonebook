@@ -1,6 +1,6 @@
-import PropTypes from "prop-types"; // імпорт PropTypes для документування призначених типів властивостей, що передаються компонентам
-// import { Label, Input } from "./Filter.styled"; // імпорт стилів тегів Label, Input
-import { Label, Input } from "../ContactForm/ContactForm.styled"; // імпорт стилів тегів label (Label), input (Input)
+import PropTypes from 'prop-types'; // імпорт PropTypes для документування призначених типів властивостей, що передаються компонентам
+import { Label, Input } from './Filter.styled'; // імпорт стилів тегів Label, Input
+// import { Label, Input } from "../ContactForm/ContactForm.styled"; // імпорт стилів тегів label (Label), input (Input)
 
 export const Filter = ({ filter, changedFormData }) => (
   <Label>

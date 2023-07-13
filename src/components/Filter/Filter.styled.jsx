@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Label = styled.label`
   display: flex;
@@ -24,10 +24,11 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 300px;
+  width: 340px;
   height: 24px;
   padding-left: 12px;
 
+  font-size: 18px;
   border: 1px solid black;
   border-radius: 10px;
 
@@ -44,18 +45,20 @@ export const Input = styled.input`
   }
 
   @media (max-width: 1023.98px) {
-    width: 260px;
+    width: 270px;
     height: 20px;
     padding-left: 10px;
 
+    font-size: 14px;
     border-radius: 8px;
   }
 
   @media (max-width: 767.98px) {
-    width: 220px;
+    width: 200px;
     height: 16px;
     padding-left: 8px;
 
+    font-size: 10px;
     border-radius: 6px;
   }
 `;

@@ -1,16 +1,16 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left: 0;
-  gap: 8px;
+  gap: 12px;
 
   list-style: inside;
 
   @media (max-width: 1023.98px) {
-    gap: 6px;
+    gap: 10px;
   }
 
   @media (max-width: 767.98px) {
@@ -21,10 +21,10 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 
   @media (max-width: 1023.98px) {
-    gap: 15px;
+    gap: 10px;
   }
 
   @media (max-width: 767.98px) {
@@ -33,7 +33,7 @@ export const ListItem = styled.li`
 `;
 
 export const Text = styled.p`
-  width: 240px;
+  width: 350px;
   height: 28px;
   margin: 0;
 
@@ -42,7 +42,7 @@ export const Text = styled.p`
   background-color: transparent;
 
   @media (max-width: 1023.98px) {
-    width: 210px;
+    width: 270px;
     height: 24px;
 
     font-size: 14px;

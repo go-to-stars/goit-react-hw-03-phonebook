@@ -5,7 +5,6 @@ import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactList } from '../ContactList/ContactList';
 import { Filter } from '../Filter/Filter';
 import { Container, Box, TopTitle, Title } from './App.stiled.jsx'; // імпорт стилів тегів div (Container), div (Box), h1 (TopTitle), h2 (Title)
-
 export class App extends React.Component {
   state = {
     contacts: [
@@ -48,13 +47,31 @@ export class App extends React.Component {
     const { contacts } = this.state;
     if (
       contacts.find(
-        item => item.name.toLowerCase() === contact.name.toLowerCase()
-      )
+        item =>
+          item.name.toLowerCase().replaceAll(' ', '') ===
+          contact.name.toLowerCase().replaceAll(' ', '')
+      ) // при порівнянні приводимо до нижнього регістру та видаляємо пробіли, для унеможливлення реєстрації однакових імен з додатковими пробілами
     ) {
       return Notiflix.Notify.warning(
         `Name ${contact.name} is already in contacts`
       ); // якщо в списку контактів існує контакт з таким ім'ям, вийти та вивести відповідне повідомлення
-    } else if (contacts.find(item => item.number === contact.number)) {
+    } else if (
+      contacts.find(
+        item =>
+          item.number
+            .replaceAll('+', '')
+            .replaceAll(' ', '')
+            .replaceAll('(', '')
+            .replaceAll(')', '')
+            .replaceAll('-', '') ===
+          contact.number
+            .replaceAll('+', '')
+            .replaceAll(' ', '')
+            .replaceAll('(', '')
+            .replaceAll(')', '')
+            .replaceAll('-', '')
+      ) // при порівнянні видаляємо плюс, пробіли, дужки та тире, якщо вони є, для унеможливлення реєстрації однакових номерів з додатковими символами
+    ) {
       return Notiflix.Notify.warning(
         `Number ${contact.number} is already in contacts`
       ); // якщо в списку контактів існує контакт з таким номером телефону, вийти та вивести відповідне повідомлення
