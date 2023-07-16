@@ -18,10 +18,10 @@ export class App extends React.Component {
 
   componentDidMount() {
     const contacts = localStorage.getItem('phonebook_contacts'); // читаємо з localStorage список контактів
-    const parsedContacts = JSON.parse(contacts); // розпарсимо список контактів з localStorage
-    if (parsedContacts) {
+    if (contacts) {
+      const parsedContacts = JSON.parse(contacts); // розпарсимо список контактів з localStorage
       this.setState({ contacts: parsedContacts });
-    } // якщо є розпарсений список контактів, то прописуємо його в об'єкт-стану state
+    } // якщо список контактів, то розпарсимо його та прописуємо в об'єкт-стану state
   } // метод componentDidMount() викликається відразу після монтування компонента (вставлення в дерево), оновлення об'єкт-стану state (setState) запускає додаткову візуалізацію, але це станеться до того, як браузер оновить екран (користувач не побачить проміжний стан)
 
   componentDidUpdate(prevProps, prevState) {
@@ -84,7 +84,7 @@ export class App extends React.Component {
       return {
         contacts: [...prevState.contacts, newContact],
       };
-    }); // інакше, створити константу newContact з id та розпиленим масивом контактів, та додати цей новий контакт до списку контактів
+    }); // інакше, створити констант newContact з id та розпиленим масивом контактів, та додати цей новий контакт до списку контактів
   }; // метод addContact класу App додає контакт в масив контактів та новий масив контактів записується у state/сontacts
 
   filterContacts = () =>
